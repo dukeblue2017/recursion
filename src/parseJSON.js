@@ -3,16 +3,16 @@
 
 // but you're not, so you'll write it from scratch:
 var parseJSON = function(json) {
-  console.log(json)
+  console.log('input:', json)
   if (json[0] === '[') {
   	var rest = json.substring(1,json.length)
   	var nextBracketIndex = rest.indexOf(']')
   	var first = json.slice(1,nextBracketIndex+1)
   	var list = first.split(', ');
-  	console.log(list)
+  	console.log(list);
   }
+
   if (json[0] === '{') {
-  	console.log(json)
   	var rest = json.substring(1,json.length)
   	var nextBracketIndex = rest.indexOf('}')
   	var first = json.slice(1,nextBracketIndex+1)
@@ -22,6 +22,8 @@ var parseJSON = function(json) {
   	  var entry = list[i].split(': ');
   	  object[entry[0]] = entry[1];
   	}
-  	console.log(object);
+  	console.log('object output:', object);
   }
+
+
 };
